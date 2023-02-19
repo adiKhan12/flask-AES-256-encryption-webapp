@@ -21,6 +21,22 @@ python run.py
 ```
 4. Navigate to `http://localhost:5000/` in your browser.
 
+
+You should now be able to access the application by navigating to `http://localhost:5000` in a web browser.
+
+## Building the Binary
+
+To build the binary for the application, you can use the following command:
+```
+pyinstaller --name=file-encryption-app --add-data="app/templates:app/templates" --add-data="app/static:app/static" --add-data="app/encryption.py:app" --add-data="app/init.py:app" --add-data="run.py:." --clean --hidden-import="pkg_resources.py2_warn" --onefile run.py
+```
+The binary will be created in the `dist` directory.
+
+## GitHub Workflow
+
+This repository includes a GitHub workflow that will automatically build and upload the binary as an artifact whenever code is pushed to the main branch.
+
+
 ## Usage
 To use the application, follow these steps:
 
