@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload a File{% endblock %}
+
+{% block content %}
+  <h1>Decrypt a File</h1>
+  <form action="{{ url_for('decrypt_file_func') }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="file">Select a file:</label>
+      <input type="file" name="file" id="file" required>
+    </div>
+    <div class="form-group">
+      <label for="key">Decryption key:</label>
+      <input type="password" name="key" id="key" required>
+    </div>
+    <button type="submit" class="btn">Decrypt File</button>
+  </form>
+{% endblock %}
